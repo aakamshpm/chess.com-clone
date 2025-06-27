@@ -27,7 +27,7 @@ app.use(express.json());
 
 const chess = new Chess();
 let players: ChessInterface["players"] = {};
-let currentPlayer = "W";
+let currentPlayer = "w";
 
 app.use(express.static(path.join(__dirname, "../public")));
 
@@ -77,7 +77,7 @@ io.on("connection", (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log("Server is running on http://localhost:3000");
+  console.log("Server is running on http://localhost:" + PORT);
   console.log(
     `Please manually open http://localhost:${CLIENT_PORT} to access the client.`
   );
